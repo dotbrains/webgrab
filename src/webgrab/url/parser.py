@@ -17,19 +17,21 @@ def parse_url(url: str) -> ParseResult:
     Raises:
         ConfigurationError: If URL is invalid or missing scheme/host.
     """
-    # Add scheme if missing
-    if not url.startswith(("http://", "https://")):
+    # Check if URL has a scheme
+    if "://" in url:
+        # URL has a scheme, validate it
+        parsed = urlparse(url)
+        if parsed.scheme not in ("http", "https"):
+            raise ConfigurationError(
+                f"Invalid URL scheme: '{parsed.scheme}' (must be http or https)"
+            )
+    else:
+        # No scheme, add https
         url = "https://" + url
-
-    parsed = urlparse(url)
+        parsed = urlparse(url)
 
     if not parsed.netloc:
         raise ConfigurationError(f"Invalid URL: missing host in '{url}'")
-
-    if parsed.scheme not in ("http", "https"):
-        raise ConfigurationError(
-            f"Invalid URL scheme: '{parsed.scheme}' (must be http or https)"
-        )
 
     return parsed
 
