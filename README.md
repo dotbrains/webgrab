@@ -6,7 +6,7 @@
 [![Lint](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml)
 [![PyPI version](https://img.shields.io/pypi/v/webgrab.svg?color=3776AB&logo=python)](https://pypi.org/project/webgrab/)
 [![Python versions](https://img.shields.io/pypi/pyversions/webgrab.svg?color=3776AB&logo=python)](https://pypi.org/project/webgrab/)
-[![License](https://img.shields.io/github/license/dotbrains/webgrab.svg)](LICENSE)
+[![License](https://img.shields.io/github/license/dotbrains/webgrab.svg)](https://github.com/dotbrains/webgrab/blob/main/LICENSE)
 [![Coverage](https://img.shields.io/badge/coverage-80%20tests-brightgreen.svg)](https://github.com/dotbrains/webgrab)
 
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
