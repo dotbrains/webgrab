@@ -1,16 +1,19 @@
 # webgrab
 
-> A modern, well-architected Python CLI tool that captures all resources loaded by a webpage (like browser DevTools Sources tab) and saves them with the original directory structure.
+![webgrab](assets/og-image.svg)
 
-<div align="center">
-  <img src="assets/explainer.png" alt="Explainer diagram" width="600">
-</div>
+[![PyPI version](https://img.shields.io/pypi/v/webgrab.svg?color=3776AB&logo=python)](https://pypi.org/project/webgrab/)
+[![Python versions](https://img.shields.io/pypi/pyversions/webgrab.svg?color=3776AB&logo=python)](https://pypi.org/project/webgrab/)
+[![License](https://img.shields.io/github/license/dotbrains/webgrab.svg)](https://github.com/dotbrains/webgrab/blob/main/LICENSE)
+[![Tests](https://img.shields.io/badge/coverage-80%20tests-brightgreen.svg)](https://github.com/dotbrains/webgrab)
 
-[![Tests](https://img.shields.io/badge/tests-80%20passing-brightgreen)]() 
-[![Python](https://img.shields.io/badge/python-3.10+-blue)]() 
-[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
+![Typer](https://img.shields.io/badge/-Typer-0088CC?style=flat-square&logo=python&logoColor=white)
+![Pytest](https://img.shields.io/badge/-Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+![Rich](https://img.shields.io/badge/-Rich-FF6B6B?style=flat-square&logo=python&logoColor=white)
 
-## Installation
+A modern, well-architected Python CLI tool that captures all resources loaded by a webpage (like browser DevTools Sources tab) and saves them with the original directory structure.
 
 ### From PyPI (when published)
 

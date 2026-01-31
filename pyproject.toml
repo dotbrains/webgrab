@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 authors = [
-    { name = "Nick Adamou", email = "nicholas.adamou@outlook.com" }
+    { name = "Nicholas Adamou", email = "nicholas.adamou@outlook.com" }
 ]
 keywords = ["web", "scraping", "playwright", "cli", "devtools"]
 classifiers = [
