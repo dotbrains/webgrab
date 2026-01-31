@@ -5,7 +5,6 @@ from typing import AsyncIterator, Callable
 
 from playwright.async_api import Response
 
-from ..errors import ResourceError
 from ..models import CaptureStats, Resource
 from .filters import DefaultFilter, ResourceFilter
 

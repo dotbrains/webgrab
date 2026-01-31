@@ -1,6 +1,5 @@
 """Tests for domain models."""
 
-from pathlib import Path
 
 import pytest
 

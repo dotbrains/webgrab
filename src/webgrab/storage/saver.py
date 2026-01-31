@@ -52,7 +52,7 @@ class ResourceSaver:
         try:
             write_file(local_path, resource.body)
             return local_path
-        except Exception as e:
+        except Exception:
             # Return None to indicate failure (caller will track this)
             return None
 

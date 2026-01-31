@@ -1,6 +1,5 @@
 """Tests for MIME type detection."""
 
-import pytest
 
 from webgrab.mime.detector import get_extension_for_mime, infer_extension
 

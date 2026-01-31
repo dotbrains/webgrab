@@ -1,6 +1,5 @@
 """Tests for filesystem path sanitization."""
 
-import pytest
 
 from webgrab.filesystem.sanitizer import sanitize_path_component
 

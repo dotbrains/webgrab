@@ -1,6 +1,5 @@
 """Tests for capture filters."""
 
-import pytest
 
 from webgrab.capture.filters import CompositeFilter, DefaultFilter
 

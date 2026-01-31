@@ -1,10 +1,7 @@
 """Tests for storage modules."""
 
-from pathlib import Path
 
-import pytest
 
-from webgrab.errors import FileWriteError
 from webgrab.models import Resource, SaveConfig
 from webgrab.storage.deduplicator import PathDeduplicator
 from webgrab.storage.path_resolver import url_to_local_path
