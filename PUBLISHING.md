@@ -26,7 +26,7 @@ Update the version in `pyproject.toml`:
 
 ```toml
 [project]
-name = "pywebgrab"
+name = "py-webgrab"
 version = "0.1.1"  # Increment this
 ```
 
@@ -50,7 +50,7 @@ twine check dist/*
 twine upload --repository testpypi dist/*
 
 # Test installation
-pip install --index-url https://test.pypi.org/simple/ pywebgrab
+pip install --index-url https://test.pypi.org/simple/ py-webgrab
 ```
 
 ### 4. Publish to PyPI
@@ -103,7 +103,7 @@ Create a GitHub Release:
      - Build the package
      - Run quality checks
      - Publish to PyPI
-     - Available at: https://pypi.org/project/pywebgrab/
+     - Available at: https://pypi.org/project/py-webgrab/
 
 ## Release Checklist
 
@@ -159,7 +159,7 @@ After publishing:
 
 1. **Verify Installation**
    ```bash
-   pip install pywebgrab
+   pip install py-webgrab
    webgrab --version
    ```
 
