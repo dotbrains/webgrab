@@ -4,9 +4,6 @@
 
 [![Tests](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml)
 [![Lint](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml)
-[![PyPI version](https://img.shields.io/pypi/v/py-webgrab.svg?color=3776AB&logo=python)](https://pypi.org/project/py-webgrab/)
-[![Python versions](https://img.shields.io/pypi/pyversions/py-webgrab.svg?color=3776AB&logo=python)](https://pypi.org/project/py-webgrab/)
-[![License](https://img.shields.io/github/license/dotbrains/webgrab.svg)](https://github.com/dotbrains/webgrab/blob/main/LICENSE)
 [![Coverage](https://img.shields.io/badge/coverage-80%20tests-brightgreen.svg)](https://github.com/dotbrains/webgrab)
 
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -17,14 +14,7 @@
 
 A modern, well-architected Python CLI tool that captures all resources loaded by a webpage (like browser DevTools Sources tab) and saves them with the original directory structure.
 
-### From PyPI (when published)
-
-```bash
-pip install py-webgrab
-playwright install chromium
-```
-
-### From Source
+## Installation
 
 ```bash
 # Clone the repository
@@ -34,10 +24,12 @@ cd webgrab
 # Create and activate virtual environment
 python -m venv venv
 source venv/bin/activate  # On Unix/macOS
-# or: venv\Scripts\activate on Windows
+# or: .\venv\Scripts\activate on Windows
 
-# Install in editable mode
+# Install dependencies and the package in editable mode
 pip install -e .
+
+# Install Playwright browser
 playwright install chromium
 ```
 
@@ -220,10 +212,6 @@ The codebase follows these principles:
 - Python 3.10+
 - Playwright 1.40.0+
 - Modern web browser (Chromium via Playwright)
-
-## Publishing
-
-For instructions on publishing webgrab to PyPI, see [PUBLISHING.md](PUBLISHING.md).
 
 ## Contributing
 
