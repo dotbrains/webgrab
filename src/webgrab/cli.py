@@ -8,9 +8,11 @@ import typer
 from rich.console import Console
 
 from . import __version__
-from .browser import capture_page_resources
-from .downloader import save_resources
-from .utils import parse_url
+from .capture.engine import capture_page_resources
+from .config import create_capture_config, create_save_config
+from .errors import BrowserError, ConfigurationError, NavigationError, WebGrabError
+from .storage.saver import ResourceSaver
+from .url.parser import parse_url
 
 app = typer.Typer(
     name="webgrab",
@@ -60,7 +62,7 @@ def capture(
     try:
         parsed = parse_url(url)
         full_url = parsed.geturl()
-    except ValueError as e:
+    except ConfigurationError as e:
         console.print(f"[red]Error: {e}[/red]")
         raise typer.Exit(1)
 
@@ -77,38 +79,48 @@ def capture(
     if include_external:
         console.print("[dim]Including external resources[/dim]")
 
+    # Create configurations
+    capture_config = create_capture_config(full_url, wait_time=wait)
+    save_config = create_save_config(output, full_url, include_external=include_external)
+
     # Capture resources
     try:
         with console.status("[bold blue]Loading page and capturing resources...") as status:
             def on_status(msg: str) -> None:
                 status.update(f"[bold blue]{msg}")
 
-            resources = asyncio.run(
-                capture_page_resources(full_url, wait_time=wait, on_status=on_status)
+            resources, stats = asyncio.run(
+                capture_page_resources(capture_config, on_status=on_status)
             )
-    except RuntimeError as e:
-        console.print(f"[red]Error: {e}[/red]")
+    except BrowserError as e:
+        console.print(f"[red]Browser Error: {e}[/red]")
         console.print("[dim]Hint: Make sure you've run 'playwright install chromium'[/dim]")
+        raise typer.Exit(1)
+    except NavigationError as e:
+        console.print(f"[red]Navigation Error: {e}[/red]")
+        raise typer.Exit(1)
+    except WebGrabError as e:
+        console.print(f"[red]Error: {e}[/red]")
         raise typer.Exit(1)
     except KeyboardInterrupt:
         console.print("\n[yellow]Cancelled by user[/yellow]")
         raise typer.Exit(130)
 
     console.print(f"[green]OK[/green] Captured {len(resources)} resources")
+    if stats.skipped_urls > 0:
+        console.print(f"[dim]Skipped {stats.skipped_urls} URLs (filtered)[/dim]")
 
     # Save resources
     if resources:
         with console.status("[bold blue]Saving resources to disk..."):
-            saved, skipped = save_resources(
-                resources,
-                output,
-                full_url,
-                include_external=include_external,
-            )
+            saver = ResourceSaver(save_config)
+            result = saver.save_resources(resources)
 
-        console.print(f"[green]OK[/green] Saved {saved} resources")
-        if skipped > 0:
-            console.print(f"[dim]Skipped {skipped} external resources (use --include-external to include)[/dim]")
+        console.print(f"[green]OK[/green] Saved {result.saved_count} resources")
+        if result.skipped_count > 0:
+            console.print(f"[dim]Skipped {result.skipped_count} external resources (use --include-external to include)[/dim]")
+        if result.total_failures > 0:
+            console.print(f"[yellow]Warning: {result.total_failures} resources failed to save[/yellow]")
     else:
         console.print("[yellow]No resources captured[/yellow]")
 
