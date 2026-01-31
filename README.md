@@ -1,6 +1,6 @@
 # webgrab
 
-![webgrab](assets/og-image.svg)
+![webgrab](https://raw.githubusercontent.com/dotbrains/webgrab/main/assets/og-image.svg)
 
 [![Tests](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml)
 [![Lint](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml)
