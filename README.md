@@ -221,6 +221,10 @@ The codebase follows these principles:
 - Playwright 1.40.0+
 - Modern web browser (Chromium via Playwright)
 
+## Publishing
+
+For instructions on publishing webgrab to PyPI, see [PUBLISHING.md](PUBLISHING.md).
+
 ## Contributing
 
 Contributions are welcome! Please:
