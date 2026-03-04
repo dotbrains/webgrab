@@ -22,7 +22,7 @@ git clone https://github.com/dotbrains/webgrab.git
 cd webgrab
 
 # Create and activate virtual environment
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # On Unix/macOS
 # or: .\venv\Scripts\activate on Windows
 
