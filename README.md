@@ -224,8 +224,8 @@ Contributions are welcome! Please:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details
-
+Licensed under [PolyForm Shield 1.0.0](https://polyformproject.org/licenses/shield/1.0.0/).
+See [LICENSE](LICENSE) for details.
 ## Acknowledgments
 
 Built with:
