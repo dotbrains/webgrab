@@ -5,6 +5,7 @@
 [![Tests](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/tests.yml)
 [![Lint](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml/badge.svg)](https://github.com/dotbrains/webgrab/actions/workflows/lint.yml)
 [![Coverage](https://img.shields.io/badge/coverage-80%20tests-brightgreen.svg)](https://github.com/dotbrains/webgrab)
+[![License: PolyForm Shield 1.0.0](https://img.shields.io/badge/License-PolyForm%20Shield%201.0.0-blue.svg)](https://polyformproject.org/licenses/shield/1.0.0/)
 
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Playwright](https://img.shields.io/badge/-Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
